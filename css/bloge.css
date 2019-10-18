@@ -1,0 +1,38 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    min-height: 500px;
+    background: yellow;
+}
+
+.flex-item {
+    /*flex-basis: 200px;*/
+    width: 200px;
+    height: 200px;
+}
+
+.flex-item__shadow {
+    box-shadow: inset 0 0 10px 15px white;
+}
+
+.square-left {
+    order: 3;
+    background: darkred;
+}
+
+.square {
+    order: 2;
+    background: violet;
+    border-radius: 50%;
+}
+
+.square-right {
+    background: green;
+    order: 1;
+    transform: rotate(45deg) scale(0.75);
+}

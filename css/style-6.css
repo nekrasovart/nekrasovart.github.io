@@ -1,0 +1,304 @@
+.pol33{
+  cursor:pointer;
+}
+.pol33:hover{
+  color:blue;
+}
+.menu{
+  box-sizing: border-box; /* размер блока*/
+  position: fixed; /* верхняя панель зафиксирована (на месте-fixed)*/
+  width: 100%; /* 100% ширина на весь экран*/
+  z-index: 100; /* возможное наслаивание элементов, то что прокручивается под нее уплывает*/
+  background: rgba(255, 0, 0,.4); /* цвет из трех цифр, 0,6% прозрачности*/
+}
+  .menu_list{
+    text-align: center; /* по центру*/
+  padding-left: 0; /* внутренний отступ*/
+  margin-top: 0; /* отступ*/
+  margin-bottom: 0;
+  list-style: none;
+  text-decoration: none;
+  }
+  /* обращение к li (каждой)*/
+  .menu_link{
+    display: block;
+    padding: 2rem 1.5rem;   /* размер в % отступа между текстом, измеряется высотой букв (в rem)*/
+    will-change: color; /* скорость изменения цвета*/
+    transition: color 0.25s ease-out; /* медленное изменение цвета при наведении*/
+    font-weight: 700; /* жирный шрифт*/
+    color: #fff; /* цвет текста*/
+    text-decoration: none; /* нет текстовой декорации*/
+    text-transform: uppercase;/* буквы заглавные*/
+    }
+    @media (min-width: 601px){  /* тип носителя до определенной ширины*/
+     .menu_list{
+       display: flex; /* */
+     } 
+     .menu_group{
+       flex-grow: 1; /*текст навигации по всей ширине, если значение 0, то слева*/
+     }
+     .menu_link{
+       position: relative; /*изменение от края первого блока, в котором стоит второй блок в блоке */
+       overflow: hidden; /*отображает область внутри элемента, если не входит, будет скрыто*/
+    }
+  }
+  .menu_link:before, .menu_link:after{  /*до и после текста на верхней панели навигации*/
+    content: "";  /*нет содержимого*/
+    width: 0;  /*высота*/
+    height: 3px;  /*ширина*/
+    background-color: #fff;  /* цвет белый */
+    
+    will-change: width;/*будет меняться широта и ей дается время в секундах*/
+    transition: width .05s ease-out; /*плавно 0,5 мсек, чем меньше, */
+    
+    position:absolute; /*от родителя навигационной панели*/
+    bottom: 0;
+    
+   }
+   .menu_link:before{ 
+    left: 50%;
+    transform: translateX(-50%); /*плавное расхождение подчеркивание ниже на расстоянии влево на ширину половину-50% пустоты*/
+   }
+   .menu_link:after{
+    left: 50%;
+    transform: translateX(50%); /*плавное расхождение подчеркивание вправо*/
+   }
+  
+   .menu_link:hover:before, .menu_link:hover:after{ /* hover-при наведении мышки что-то меняется*/
+    width:100%; /*появляется подчеркивание*/
+    transition-duration: .50s; /*плавно 0,5 мсек, чем больше, тем медленнее*/
+   }
+    
+  /*Эффекты навигационной панели текста*/
+  
+  .menu_link:hover{ /*hover- наведение мышкой*/
+  color: #990066; /*меняем цвет текста*/
+  text-decoration: none; /*нет дикорации*/
+  }
+  
+  /*Эффекты карусели*/
+  .container-fluid{
+    position: relative; /*relativ шаг от предфдущего шага*/
+    overflow: hidden; /*пустоты между пунктами невидимы*/
+    width:100%; /*на всю ширину*/
+    height:700px;
+    background-attachment: fixed; /*Картинка-фон фиксирована*/
+  }
+  /*Разметка блока, слайдер находящийся в флюиде*/
+  .container-fluid .slider{
+    position: absolute; /*меняется от родителя*/
+    background-position: center;
+    width:500%; /*на всю ширину за экран*/
+    height:100%;
+    animation: animate 30s linear infinite;
+  }
+  
+  .container-fluid .slider .slide{
+    position: relative; /*меняется от родителя*/
+    width:20%; /*на всю ширину за экран*/
+    height:100%;
+    float: left;
+  }
+  
+  /*высота текста*/
+  .container-fluid .slider .slide .caption {
+    position: absolute; /*меняется от родителя*/
+    bottom: 100px; /*расстояние от нижней границы*/
+    left: 90px;
+    right: 60px;
+    padding: 70px;
+    transition: .5s;
+  }
+    /*Заголовок*/
+    .container-fluid .slider .slide .caption h2{
+      transition:0.5s;
+      font-family: Arial;
+      font-size: 50px;
+      font-weight:bold;
+      color: #FFFFFF;
+      text-align: center;
+      text-shadow: #18171C 4px 4px 10px; 
+      /*тень, 1-2я цифра- отступы, 3я цифра размытие*/
+    }
+      /*текст*/
+    .container-fluid .slider .slide .caption p{
+      transition:0.5s;
+      font-family: Arial;
+      font-size: 30px;
+      font-weight:bold;
+      color: #FFFFFF;
+      text-align: center;
+      text-shadow: #18171C 4px 4px 7px; /*тень*/
+    }
+    
+    
+    .container-fluid .slider .slide.slide1{
+      background: url(../img/norvegiya_1.jpg);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    
+    .container-fluid .slider .slide.slide2{
+      background: url(../img/pict-2.jpg);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    
+    .container-fluid .slider .slide.slide3{
+      background: url(../img/pict-3.jpg);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    
+    .container-fluid .slider .slide.slide4{
+      background: url(../img/pict-4.jpg);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    /*анимация*/
+     @keyframes animate{
+       0%
+       {
+         left:0;
+       }
+        20%
+      {
+        left:0%;
+      }
+      25%
+      {
+        left:-100%;
+      }
+      45%
+      {
+        left:-100%;
+      }
+      50%
+      {
+        left:-200%;
+      }
+      70%
+      {
+        left:-200%;
+      }
+      75%
+      {
+        left:-300%;
+      }
+      95%
+      {
+        left:-300%;
+      }
+      100%
+      {
+        left:-300%
+      }
+    }
+     /*адаптация под телефон*/
+     @media (max-width: 768px){ /*мининальная цифра сжатия*/
+     .container-fluid .slider .slide .caption{
+     bottom: 20px; /*расстояние от нижней границы*/
+    left: 20px;
+    right: 20px;
+    padding: 20px;
+  }
+  .container-fluid .slider .slide .caption h2{ /*заголовок*/
+    margin: 0 0 20px;
+    padding: 0; /*внутренний отступ отсутствует*/
+    color: #fff;
+    font-size: 50px;
+  }
+  .container-fluid .slider .slide .caption p{ /*текст*/
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 30px;
+  }
+     }
+
+
+/*CSS с карточками*/
+
+
+body{/*обращение ко всему сайту*/
+  margin: 0;/*внешний отступ=0*/
+  padding: 0;/*внутренний отступ=0*/
+  font-family: sans-serif;/*шрифт без засечек*/
+  background:#b4d6ea;/*цвет фона*/
+}
+.imgDi133{/*обращение к классу imgDi133(с картинкой под карточками)*/
+  background: url(https://pp.userapi.com/c849024/v849024411/1ce56f/RoHaHb0kcn4.jpg);
+  width: 100%;/*высота картинки*/
+  height: 80vh;/*ширина картинки*/
+  background-size: cover;/*масштабирует картинку под ширину и высоту экрана*/
+  background-position: center;/*по центру*/
+}
+.tlik33{/*обращение к классу tlik33*/
+  background:url(https://pp.userapi.com/c857436/v857436809/a2d8/z246qLktqS8.jpg);
+}
+.container33{/*обращение к классу со всеми карточками*/
+  max-width:1000px;/*максимальная ширина*/
+  margin:0 auto;/*внешний отступ сверху 0, сбоку автоматический*/
+  display:flex;/*Внутренние div-ы выстраиваются в ряд (вдоль главной оси) колонками одинаковой высоты, независимо от содержимого.*/
+  flex-wrap:wrap;/*Flex-элементы переносятся, располагаясь в несколько горизонтальных рядов (если не помещаются в один ряд) в направлении слева направо (в rtl справа налево).*/
+  justify-content:space-around;/*элементы выравниваются по главной оси, распределяя свободное место вокруг себя.*/
+}
+.card33{/*обращение к классу с карточкой(каждой по очереди)*/
+  position:relative;/*позиция релативная*/
+  margin:10% 1%;/*отступ сбоку и по высоте*/                            
+  width:300px;/*ширина*/
+  height:400px;/*высота*/
+  background:#fff;/*фон*/
+  transform-style:preserve-3d;/*эффект 3Д*/
+  transform:perspective(2000px);/*эффект перспективы*/
+  transition:1.4s;/*время на раскрытие меню*/
+  box-shadow:inset 300px 0 50px rgba(0,0,0,.5);/*тень*/
+}
+.card33:hover{/*меняется что-либо при навведение мыши на карточку*/
+  z-index:1000;/*слой картинки на картинку*/
+  transform:perspective(2000px) rotate(-10deg);/*перспектива и поворот карточки*/
+  box-shadow:inset 20px 0 50px rgba(0,0,0,.5);/* внутренняя тень*/
+}
+.card33 .imgBox33{/*обращение к блоку с картинкам в карточке*/
+  position:relative;/*позиция релативная*/
+  width:101%;/*ширина*/
+  height:100%;/*высота*/
+  border:1px solid #000;/*рамка*/
+  box-sizing:border-box;/*граница по блоку*/
+  transform-origin:left;/*открытие влево*/
+  z-index:1;/*наложение картинок друг на друга*/
+  transition:1s;/*время на эффект*/
+}
+.card33:hover .imgBox33{/*обращение к блоку с картинками в карточке*/
+  transform:rotateY(-135deg);/*Сдвиг открывющегося меню*/
+}
+.card33 .imgBox33 .img{/*обращение к картинкам в карточке*/
+  position:absolute;/*Позиция*/
+  top:0;/*отступ сверху*/
+  left:0;/*отступ сбоку*/
+  width:100%;/*ширина*/
+  height:100%;/*высота*/
+  object-fit:cover;/*Картинка обрезается, выравниваясь по центру с сохранением пропорций таким образом, чтобы полностью заполнить область контейнера.*/
+}
+.card33 .details33{/*обращение к тексту в карточках*/
+  position:absolute;/*позиция абсолютная*/
+  top:0;/*отступ сверху*/
+  left:0;/*отступ сбоку*/
+  box-sizing:border-box;/*рамочка вокруг текста*/
+  padding:20px;/*внутренний отступ*/
+}
+img{/*обращение ко всем картинкам на сайте*/
+  width:100%;/*ширина*/
+  height:100%;/*высота*/
+}
+.details33 h1{/*обращение к заголовку в тексте*/
+  font-size: 20px;/*размер шрифта*/
+}
+.details33 p{/*обращение к тексту в тексте*/
+  font-size: 14px;/*размер шрифта*/
+}
+

@@ -1,0 +1,32 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    min-height: 500px;
+    background: yellow;
+}
+
+.flex-item {
+    flex-basis: 200px;
+    width: 300px;
+    height: 100px;
+}
+
+.square {
+    order: 3;
+    background: darkred;
+}
+
+.circle {
+    order: 2;
+    background: violet;
+}
+
+.romb {
+    background: green;
+    order: 1;
+}

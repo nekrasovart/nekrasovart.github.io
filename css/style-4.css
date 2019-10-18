@@ -1,0 +1,32 @@
+.wrap{
+ width:750px;
+ margin:0 auto;
+
+}
+header{
+  background: orange;
+}
+.content, .first, .second{
+  height:400px;
+}
+.content{ /*Название класса*/
+  float:right;
+  background:grey;/*Серый фон*/
+  width:60%;
+}
+.second{
+  float:right;
+  background:pink;
+  width:20%;
+}
+.first{
+  float:right;
+  background:red;
+  width:20%;
+}
+footer{
+  background:orange;
+}
+body{ /*Применяется ко всему фону, если своя картинка ../название.jpg*/
+  background:url("https://wallpapertag.com/wallpaper/full/1/b/2/120650-download-free-watercolor-background-tumblr-2880x1800-macbook.jpg") no-repeat;
+}

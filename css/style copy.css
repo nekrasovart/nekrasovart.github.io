@@ -1,0 +1,38 @@
+*{
+font-family:arial;
+}
+
+p, h1{
+  color:red;
+}
+
+.paragraph{
+  color:green;
+}
+
+.wrap{
+  color: orange;
+}
+
+#heading{
+  font-size:45px;
+}
+
+a[href="http//yandex.ru"]{
+  color:pink;
+}
+
+.container h3{
+  background:blue;
+}
+
+#heading + span{
+  background:yellow;
+}
+
+a:hover{
+  background:olive;
+}
+
+h1::first-letter{
+}

@@ -1,0 +1,7 @@
+.my-container{
+  background: gray;
+}
+.my-col {
+  background: yellow;
+  border: 1px solid #000;
+}

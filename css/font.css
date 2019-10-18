@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "bebas", sans-serif; /*cursiv*/
+  src: url("../fonts/bebas.ttf");
+}
+@font-face {
+  font-family: "Bikham Cyr Script", cursive; /*cursive*/
+  src: url("../fonts/Bikham Cyr Script.ttf");
+}
+.main-header {
+  /* font-familly: "Verdana" "Tahoma" */
+  /* font-family: 'Rubik', sans-serif;
+  font-family: 'Pacifico', cursive;
+  font-family: 'Philosopher', sans-serif; */
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.header-text {
+  font-family: 'Bikham Cyr Script';
+}
+
+.header-text h3 {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Bikham Cyr Script', serif;
+}
+
+.header-text p {
+  font-family: "Arial", sans-serif;
+}
+
+.menu_group {
+  font-family: 'bebas';
+}
+.carousel-caption h4 {
+ font-family: 'CormorantInfant-Bold';   
+}
+.carousel-caption p {
+ font-family: 'Arsenal-Italic';   
+}
